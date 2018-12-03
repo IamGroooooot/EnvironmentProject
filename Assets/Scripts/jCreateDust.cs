@@ -28,6 +28,7 @@ public class jCreateDust : MonoBehaviour {
             temp.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
             Counter = 0;
             NewPos = true;
+            jDustCounter.totalDust++;
         }
     }
 

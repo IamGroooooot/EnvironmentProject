@@ -240,6 +240,9 @@ GameObject:
   - component: {fileID: 995025311}
   - component: {fileID: 995025312}
   - component: {fileID: 995025315}
+  - component: {fileID: 995025317}
+  - component: {fileID: 995025316}
+  - component: {fileID: 995025318}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -324,10 +327,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eafa8d255799c849bc2f2b6b6fd4bee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delay: 0.05
+  dust: {fileID: 1303954629}
+  RandomPos: {fileID: 1935089129}
+  PlayerRB: {fileID: 373953057}
+--- !u!114 &995025316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 995025310}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eafa8d255799c849bc2f2b6b6fd4bee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   delay: 10
   dust: {fileID: 1303954629}
   RandomPos: {fileID: 1935089129}
   PlayerRB: {fileID: 373953057}
+--- !u!114 &995025317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 995025310}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eafa8d255799c849bc2f2b6b6fd4bee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 10
+  dust: {fileID: 1303954629}
+  RandomPos: {fileID: 1935089129}
+  PlayerRB: {fileID: 373953057}
+--- !u!114 &995025318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 995025310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa698df8e9044548b76306387c5e345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myPPM: 0
+  mapSize: 25
 --- !u!1 &1068617681
 GameObject:
   m_ObjectHideFlags: 0
