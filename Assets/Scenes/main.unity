@@ -485,17 +485,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 54155826086951258, guid: 9c333603d4055ef438bf43237fae2eac,
         type: 2}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54155826086951258, guid: 9c333603d4055ef438bf43237fae2eac,
-        type: 2}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 135273736148892692, guid: 9c333603d4055ef438bf43237fae2eac,
-        type: 2}
-      propertyPath: m_IsTrigger
+      propertyPath: m_Drag
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
