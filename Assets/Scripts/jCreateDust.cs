@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class jCreateDust : MonoBehaviour {
-    public float delay = 10f;
+    public float delay = 0.2f;
     public GameObject dust;
     public Transform RandomPos;
     public Rigidbody PlayerRB;
@@ -22,7 +22,7 @@ public class jCreateDust : MonoBehaviour {
             NewPos = false;
         }
         Counter = Counter + Time.deltaTime;
-        if (Counter>1f) {
+        if (Counter> delay) {
             GameObject temp = Instantiate(dust, RandomPos, false);
             temp.transform.SetParent(transform.parent);
             temp.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
