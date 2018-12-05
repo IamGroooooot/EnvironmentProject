@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class jPlayerManager : MonoBehaviour {
     public GameObject mPlayer;
     public Rigidbody mRigidBD;
+    public Image im;
 
     void Awake()
     {
@@ -19,23 +20,32 @@ public class jPlayerManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (jDustCounter.totalDust > 0)
+        {
+            float myAlpha = 0;
+            myAlpha = jDustCounter.totalDust*3.5f / jDustCounter.MAX_dust;
+            if (myAlpha>2.5f)
+            {
+                myAlpha = 2.5f;
+            }
+            im.GetComponent<CanvasRenderer>().SetAlpha(myAlpha);
+        }
         mRigidBD.velocity = new Vector3(0,0,0);
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow)|| Input.GetKey(KeyCode.D))
         {
-            mRigidBD.velocity = new Vector3(0,0,-20);
+            mRigidBD.velocity = new Vector3(0,0,-10);
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            mRigidBD.velocity = new Vector3(0, 0, 20);
+            mRigidBD.velocity = new Vector3(0, 0, 10);
         }
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
-            mRigidBD.velocity = new Vector3(20, 0, 0);
+            mRigidBD.velocity = new Vector3(10, 0, 0);
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
-            mRigidBD.velocity = new Vector3(-20, 0, 0);
+            mRigidBD.velocity = new Vector3(-10, 0, 0);
         }
-        Debug.Log(mPlayer.ToString());
     }
 }

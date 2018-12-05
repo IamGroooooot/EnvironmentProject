@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class jDustCounter : MonoBehaviour {
     public static jDustCounter instance = null;        // for singleton
     public static int totalDust = 0;
     public static int MAX_dust=3000;  //나중에 get ㄱㄱ
+    public static float delay = 0.1f;
+    public Text mVal;
     //여기서 농도 설정 
-    public int myPPM=0;
-
+    public int myPM=0;
     //맵 크기
     public float mapSize;
 
@@ -21,6 +24,12 @@ public class jDustCounter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        myPM = 600 * totalDust / MAX_dust;
+        
+        mVal.text = Mathf.Floor(myPM).ToString();
+        if (Mathf.Floor(myPM)>400)
+        {
+            SceneManager.LoadScene(2);
+        }
 	}
 }

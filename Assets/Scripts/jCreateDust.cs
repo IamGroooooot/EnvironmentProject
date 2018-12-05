@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class jCreateDust : MonoBehaviour {
-    public float delay = 0.2f;
     public GameObject dust;
     public Transform RandomPos;
     public Rigidbody PlayerRB;
@@ -11,7 +10,6 @@ public class jCreateDust : MonoBehaviour {
     bool NewPos = true;
 	// Use this for initialization
 	void Start () {
-        StartCoroutine(makeDust());
 	}
 	
 	// Update is called once per frame
@@ -22,20 +20,45 @@ public class jCreateDust : MonoBehaviour {
             NewPos = false;
         }
         Counter = Counter + Time.deltaTime;
-        if (Counter> delay) {
+        if (Counter> jDustCounter.delay &&jDustCounter.totalDust<jDustCounter.MAX_dust) {
             GameObject temp = Instantiate(dust, RandomPos, false);
-            temp.transform.SetParent(transform.parent);
-            temp.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            if (temp != null)
+            {
+                temp.transform.SetParent(transform.parent);
+                temp.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            }
+            RandomPos.position = new Vector3(PlayerRB.position.x + Random.Range(-10f, 10f), PlayerRB.position.y + Random.Range(10f, 100f), PlayerRB.position.z + Random.Range(-10f, 10f));
+            GameObject temp2 = Instantiate(dust, RandomPos, false);
+            if (temp2 != null)
+            {
+                temp2.transform.SetParent(transform.parent);
+                temp2.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            }
+            RandomPos.position = new Vector3(PlayerRB.position.x + Random.Range(-10f, 10f), PlayerRB.position.y + Random.Range(10f, 100f), PlayerRB.position.z + Random.Range(-10f, 10f));
+            GameObject temp3 = Instantiate(dust, RandomPos, false);
+            if (temp3 != null)
+            {
+                temp3.transform.SetParent(transform.parent);
+                temp3.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            }
+            RandomPos.position = new Vector3(PlayerRB.position.x + Random.Range(-10f, 10f), PlayerRB.position.y + Random.Range(10f, 100f), PlayerRB.position.z + Random.Range(-10f, 10f));
+            GameObject temp4 = Instantiate(dust, RandomPos, false);
+            if (temp4 != null)
+            {
+                temp4.transform.SetParent(transform.parent);
+                temp4.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            }
+            RandomPos.position = new Vector3(PlayerRB.position.x + Random.Range(-10f, 10f), PlayerRB.position.y + Random.Range(10f, 100f), PlayerRB.position.z + Random.Range(-10f, 10f));
+            GameObject temp5 = Instantiate(dust, RandomPos, false);
+            if (temp5 != null)
+            {
+                temp5.transform.SetParent(transform.parent);
+                temp5.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            }
             Counter = 0;
             NewPos = true;
-            jDustCounter.totalDust++;
+            jDustCounter.totalDust = jDustCounter.totalDust+5;
         }
-    }
-
-    IEnumerator makeDust()
-    {
-        
-        yield return new WaitForSeconds(3f);
     }
 }
 
