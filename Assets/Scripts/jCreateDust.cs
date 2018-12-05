@@ -20,7 +20,7 @@ public class jCreateDust : MonoBehaviour {
             NewPos = false;
         }
         Counter = Counter + Time.deltaTime;
-        if (Counter> jDustCounter.delay &&jDustCounter.totalDust<jDustCounter.MAX_dust) {
+        if (Counter> jDustCounter.instance.delay &&jDustCounter.instance.totalDust<jDustCounter.instance.MAX_dust) {
             GameObject temp = Instantiate(dust, RandomPos, false);
             if (temp != null)
             {
@@ -57,7 +57,7 @@ public class jCreateDust : MonoBehaviour {
             }
             Counter = 0;
             NewPos = true;
-            jDustCounter.totalDust = jDustCounter.totalDust+5;
+            jDustCounter.instance.totalDust = jDustCounter.instance.totalDust+5;
         }
     }
 }

@@ -18,13 +18,13 @@ public class jGenerateTree : MonoBehaviour {
             tempTree.transform.SetParent(transform.parent);
             Destroy(tempTree,3f);
             
-            if (jDustCounter.totalDust>9)
+            if (jDustCounter.instance.totalDust>9)
             {
-                jDustCounter.totalDust -= 10;
+                jDustCounter.instance.totalDust -= 10;
             }
             else
             {
-                jDustCounter.totalDust = 0;
+                jDustCounter.instance.totalDust = 0;
             }
         }
     }

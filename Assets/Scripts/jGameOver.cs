@@ -8,11 +8,17 @@ public class jGameOver : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        if (jDustCounter.instance != null)
+        {
+            jDustCounter.instance.totalDust = 0;
+
+            jDustCounter.instance.myPM = 0;
+        }
+        
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+//.instance
 public class jDustCounter : MonoBehaviour {
     public static jDustCounter instance = null;        // for singleton
-    public static int totalDust = 0;
-    public static int MAX_dust=3000;  //나중에 get ㄱㄱ
-    public static float delay = 0.1f;
+    public int totalDust = 0;
+    public int MAX_dust=3000;  //나중에 get ㄱㄱ
+    public float delay = 0.1f;
     public Text mVal;
     //여기서 농도 설정 
     public int myPM=0;

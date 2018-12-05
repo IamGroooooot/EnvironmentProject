@@ -20,10 +20,10 @@ public class jPlayerManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (jDustCounter.totalDust > 0)
+        if (jDustCounter.instance.totalDust > 0)
         {
             float myAlpha = 0;
-            myAlpha = jDustCounter.totalDust*3.5f / jDustCounter.MAX_dust;
+            myAlpha = jDustCounter.instance.totalDust*3.5f / jDustCounter.instance.MAX_dust;
             if (myAlpha>2.5f)
             {
                 myAlpha = 2.5f;

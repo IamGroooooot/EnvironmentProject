@@ -18,7 +18,7 @@ public class jOnPlaneCol : MonoBehaviour {
     {
         if (col.gameObject.tag == "dust")
         {
-            jDustCounter.totalDust--;
+            jDustCounter.instance.totalDust--;
             Destroy(col.gameObject);
         }
     }

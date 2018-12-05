@@ -17,7 +17,7 @@ public class jGoBackForth : MonoBehaviour {
         myCarRigid.velocity = new Vector3(0,0,3);
         if (counter>0.5f)
         {
-            jDustCounter.totalDust += 100;
+            jDustCounter.instance.totalDust += 100;
             counter = 0;
         }
     }
